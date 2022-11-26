@@ -29,17 +29,44 @@ println!("The number is {}.", a_number);
 a_number = 15;
 println!("Now the number is {}.", a_number);
 
-//variable shadowing
-// Declare first variable binding with name "shadow_num"
-let shadow_num = 5;
 
-// Declare second variable binding, shadows existing variable "shadow_num" 
-let shadow_num = shadow_num + 5; 
 
-// Declare third variable binding, shadows second binding of variable "shadow_num"
-let shadow_num = shadow_num * 2; 
 
-println!("The number is {}.", shadow_num);
+    let mut  x = 5;
+    println!("The value of x is: {x}");
+    //espera el mismo tipo de dato cuando se cambia el valor con MUT
+    x = 6;
+    println!("The value of x is: {x}");
+    const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
+
+    println!("{THREE_HOURS_IN_SECONDS}");
+
+    println!("Shadowing:");
+    // se puede utilizar una misma variable y sobreescribirla, el nuevo valor opacara  la  primer variable y solo tendra en cuenta al nuevo valor asignado.
+
+    // La otra diferencia entre muty shadowing es que debido a que estamos creando efectivamente una nueva variable cuando usamos la letpalabra clave nuevamente, podemos cambiar el tipo de valor pero reutilizar el mismo nombre.
+
+    let x = 5;
+    
+    let x = x + 1;
+    println!("the value of x is : {x}");
+        
+        //el espacio separado por llaves indica un ambito interno
+        //em el ambito interno la variable tiene el valor que se le declara alli dentro.
+        {
+            let x = x * 2;
+            println!("The value of x in the inner scope is: {x}");
+        }
+    
+    println!("The value of x is: {x}");
+
+    let spaces = "          ";
+    //dice cuantos valores tiene el sring: se remplaza la variable anterior por la cantidad de numeros del string
+    let spaces = spaces.len();
+    
+    print!("La cantidad de espacios es : {spaces}")
+
+
 
 }
 
