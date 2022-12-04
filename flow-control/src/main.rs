@@ -79,4 +79,68 @@ fn main() {
     println!("End count = {count}");
     //El ciclo externo tiene la etiqueta 'counting_upy contará de 0 a 2. El ciclo interno sin etiqueta cuenta hacia atrás de 10 a 9. El primero break que no especifica una etiqueta solo saldrá del ciclo interno. La break 'counting_up;instrucción saldrá del ciclo externo. Este código imprime:
 
+    //Bucles condicionales con while
+    println!("Bucles con while");
+    // Mientras la condición es verdadera, el bucle se ejecuta. Cuando la condición deja de ser verdadera, el programa llama breaky detiene el ciclo.
+    let mut number_while = 3; //ESTE MISMO EJEMPLO SE REPITE CON UN FOR Y UN RANGE MAS ABAJO; SE LEERA MAS FACIL
+
+    while number_while != 0 {
+        println!("{number_while}!");
+
+        number_while -= 1;
+    }
+
+    println!("LIFTOFF!!!");
+    //You can choose to use the while construct to loop over the elements of a collection, such as an array:while para array 
+    let a = [10, 20, 30, 40, 50];
+    let mut index = 0; 
+
+    while index < 5 {
+        println!("the value is: {}", a[index]);
+
+        index += 1;
+    }
+    //esta manera es propensa a errores, por ejemplo si cambiamos el tamaño de la matriz y olvidamos ajustar el index; ademas consume tiempo de ejecucion verificar si el indice se ajusta a la logitud del array; por eso para realizar la misma accion es mejor utilizar un FOR
+
+    //Bucle a través de una colección con for
+    println!("Bucles con for"); //es el que mas vamos a utilizar, inclusive para realizar acciones que podriamos con while;aumentamos la seguridad del código y eliminamos la posibilidad de errores que podrían resultar de ir más allá del final de la matriz o no ir lo suficientemente lejos y perder algunos elementos.
+
+    let d = [100, 200, 300, 400, 500];
+
+    for element in d {
+        println!("the value is: {element}");
+    }
+
+    //ejemplo con un RANGE, para realziar una cuenta regresiva.
+    // Range, provisto por la biblioteca estándar, que genera todos los números en secuencia comenzando desde un número y terminando antes de otro número
+    for number in (1..4).rev() {
+        println!("Numero del rango: {number}!");
+    }
+    println!("LIFTOFF!!!");
+
+    //ejercicio
+    println!("ejercicio");
+    let t = [5; 10];
+    let mut sum = 0;
+    for x in t {
+      sum += x;
+    }
+    println!("El resultado es :{sum}");
+
+    println!("ejemplo raro que puede servir para pensar");
+    let mut xx = 0;
+    'a: loop {
+      xx += 1;
+      'b: loop {
+        if xx > 10 {
+          continue 'a;
+        } else {
+          break 'b;
+        }      
+      }
+      break println!("{xx}");       
+    }
+
 }
+
+
