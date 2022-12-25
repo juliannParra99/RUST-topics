@@ -1,0 +1,1 @@
+C:\Users\julian\Desktop\RUST\RUST-topics-githubRepo\RUST-topics\3.Understanding-Ownership\what_is_ownership\target\debug\what_is_ownership.exe: C:\Users\julian\Desktop\RUST\RUST-topics-githubRepo\RUST-topics\3.Understanding-Ownership\what_is_ownership\src\main.rs
